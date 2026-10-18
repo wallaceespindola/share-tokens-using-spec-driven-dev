@@ -101,6 +101,8 @@ How does your team handle uneven access to AI coding tools today: more seats, po
 
 ---
 
+**Examples repository:** every example in this article (the PRD, the TASK-042 task spec, the team guides, the Copilot instructions, the prompt file and the diagrams) is in <https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev>.
+
 Need more tech insights?
 Check out my GitHub, LinkedIn, and Speaker Deck.
 Happy coding!

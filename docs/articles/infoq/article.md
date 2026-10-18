@@ -208,6 +208,8 @@ The pattern has costs. It adds a review step, a file per task and a coordination
 - [Agent Skills](https://agentskills.io/)
 - Companion repository with the PRD, task template, example task, Copilot instructions and prompt file: [github.com/wallaceespindola/share-tokens-using-spec-driven-dev](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev)
 
+**Examples repository:** every example in this article (the PRD, the TASK-042 task spec, the team guides, the Copilot instructions, the prompt file and the diagrams) is in <https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev>.
+
 ## About the author
 
 **Wallace Espindola, Solution Architect**
