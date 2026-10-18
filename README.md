@@ -94,6 +94,21 @@ make slides     # export the Marp deck to PDF and PPTX
 
 CI runs the Markdown lint and link check on every push and pull request.
 
+## Support
+
+If you find this project helpful, please consider:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support%20my%20work-FFDD00?style=flat&labelColor=101010&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/wallace.espindola)
+[![Star on GitHub](https://img.shields.io/badge/Star%20on%20GitHub-share--tokens--using--spec--driven--dev-181717?style=flat&logo=github)](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev)
+
+[![GitHub stars](https://img.shields.io/github/stars/wallaceespindola/share-tokens-using-spec-driven-dev?style=social)](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/wallaceespindola/share-tokens-using-spec-driven-dev?style=social)](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/wallaceespindola/share-tokens-using-spec-driven-dev?style=social)](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/watchers)
+[![GitHub issues](https://img.shields.io/github/issues/wallaceespindola/share-tokens-using-spec-driven-dev)](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/wallaceespindola/share-tokens-using-spec-driven-dev)](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/commits/main)
+
+Star the repo on GitHub if it helps your team. It motivates me a lot!
+
 ## Author
 
 Wallace Espindola, Solution Architect
