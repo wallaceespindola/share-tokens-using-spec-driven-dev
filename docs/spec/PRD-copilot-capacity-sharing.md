@@ -1,6 +1,6 @@
 # PRD: Sharing Copilot capacity through task specs
 
-Author: Wallace Espindola (<wallace.espindola@gmail.com>) · [LinkedIn](https://www.linkedin.com/in/wallaceespindola/) · [GitHub](https://github.com/wallaceespindola/)
+Author: Wallace Espindola, Solution Architect (<wallace.espindola@gmail.com>) · [LinkedIn](https://www.linkedin.com/in/wallaceespindola/) · [GitHub](https://github.com/wallaceespindola/)
 Status: Proposal
 
 ## 1. Summary

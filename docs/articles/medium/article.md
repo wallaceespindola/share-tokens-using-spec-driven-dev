@@ -10,7 +10,7 @@ Meta description: Some developers run out of Copilot credits while teammates end
 
 ![Banner](banner.png)
 
-*By [Wallace Espindola](https://www.linkedin.com/in/wallaceespindola/) | [wallace.espindola@gmail.com](mailto:wallace.espindola@gmail.com) | [GitHub](https://github.com/wallaceespindola/)*
+*By [Wallace Espindola](https://www.linkedin.com/in/wallaceespindola/), Solution Architect | [wallace.espindola@gmail.com](mailto:wallace.espindola@gmail.com) | [GitHub](https://github.com/wallaceespindola/)*
 
 *I wrote this article with AI assistance, then reviewed, fact-checked and edited it myself.*
 

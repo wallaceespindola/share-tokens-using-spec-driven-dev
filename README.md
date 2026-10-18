@@ -90,7 +90,7 @@ CI runs the Markdown lint and link check on every push and pull request.
 
 ## Author
 
-Wallace Espindola
+Wallace Espindola, Solution Architect
 
 - Email: <wallace.espindola@gmail.com>
 - LinkedIn: <https://www.linkedin.com/in/wallaceespindola/>

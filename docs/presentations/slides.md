@@ -34,7 +34,7 @@ style: |
 ## Spec-driven delegation for teams with uneven AI budgets
 
 **Wallace Espindola**
-Sr. Software Engineer / Solution Architect
+Solution Architect
 
 <wallace.espindola@gmail.com>
 linkedin.com/in/wallaceespindola | github.com/wallaceespindola
@@ -409,7 +409,7 @@ github.com/wallaceespindola/share-tokens-using-spec-driven-dev
 
 **GitHub Spec Kit:** github.com/github/spec-kit
 
-**Wallace Espindola**
+**Wallace Espindola**, Solution Architect
 <wallace.espindola@gmail.com>
 linkedin.com/in/wallaceespindola | github.com/wallaceespindola
 

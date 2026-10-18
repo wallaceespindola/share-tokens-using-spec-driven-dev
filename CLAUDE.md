@@ -34,4 +34,4 @@ CI (`.github/workflows/docs.yml`) runs markdownlint and the offline link check.
 - Diagrams: keep the `.puml` / `.mmd` source next to its rendered PNG, and re-render after editing the source. Articles embed the PNG by relative path.
 - Prose: sentence-case headings, no em dashes, no fabricated stats or anecdotes. Never name the author's employer or internal tools.
 - Copilot billing and file-location details change often; verify against docs.github.com before stating them.
-- Author info: Wallace Espindola, <wallace.espindola@gmail.com>, <https://www.linkedin.com/in/wallaceespindola/>, <https://github.com/wallaceespindola/>
+- Author info: Wallace Espindola, Solution Architect, <wallace.espindola@gmail.com>, <https://www.linkedin.com/in/wallaceespindola/>, <https://github.com/wallaceespindola/>

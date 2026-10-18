@@ -50,6 +50,6 @@ Sources live in `docs/presentations/diagrams/`:
 
 ---
 
-Author: Wallace Espindola, <wallace.espindola@gmail.com>
+Author: Wallace Espindola, Solution Architect, <wallace.espindola@gmail.com>
 LinkedIn: <https://www.linkedin.com/in/wallaceespindola/> | GitHub: <https://github.com/wallaceespindola/>
 Repo: <https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev>
