@@ -1,0 +1,72 @@
+@startuml delegation-sequence
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 13
+skinparam sequence {
+  ArrowColor #34495E
+  LifeLineBorderColor #7F8C8D
+  ParticipantBorderColor #2C3E50
+  ActorBorderColor #2C3E50
+  GroupBorderColor #95A5A6
+  GroupBackgroundColor #F7F9FA
+}
+skinparam note {
+  BackgroundColor #FFF9DB
+  BorderColor #F1C40F
+}
+
+actor "Owner\n(no or low AI capacity)" as owner #D6EAF8
+actor "Reviewer\n(tech lead / architect)" as reviewer #E8DAEF
+actor "Delegate\n(spare Copilot capacity)" as delegate #D5F5E3
+participant "Copilot\n(agent mode)" as copilot #FCF3CF
+participant "Git repo\n/docs/backlog" as repo #FDEBD0
+participant "CI/CD\npipeline" as ci #FADBD8
+
+owner -> repo : commit TASK-NNN.md\n+ open ai-delegation issue
+owner -> reviewer : request readiness review
+activate reviewer
+reviewer -> repo : read task + referenced docs
+alt definition of ready not met
+  reviewer --> owner : send back with comments
+else ready
+  reviewer -> repo : Status: Approved
+end
+deactivate reviewer
+
+note over owner, delegate : No credits are spent before this point
+
+owner -> delegate : assign (name recorded in task)
+activate delegate
+delegate -> copilot : new session: task file + linked docs\n(shared implement-task prompt)
+activate copilot
+copilot --> delegate : plan
+delegate -> copilot : approve plan, implement
+copilot --> delegate : code + tests + doc updates
+deactivate copilot
+delegate -> delegate : run full test suite
+delegate -> repo : push branch +\nfill "Implementation notes"
+deactivate delegate
+
+activate owner
+owner -> owner : validate: tests, functional checks, screens
+alt gap found
+  owner -> repo : update task file
+  owner -> delegate : request another iteration
+else accepted
+  owner -> repo : final commit + open PR
+  repo -> ci : trigger pipeline
+  ci --> owner : build, tests, scans, quality gates
+end
+deactivate owner
+
+legend bottom right
+  |= Color |= Meaning |
+  | <#D6EAF8> | Owner (accountable) |
+  | <#E8DAEF> | Reviewer (gatekeeper) |
+  | <#D5F5E3> | Delegate (spends credits) |
+  | <#FCF3CF> | AI assistant |
+  | <#FDEBD0> | Repository |
+  | <#FADBD8> | CI/CD pipeline |
+endlegend
+@enduml

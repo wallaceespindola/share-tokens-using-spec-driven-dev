@@ -1,0 +1,22 @@
+flowchart LR
+    A["New unit of work"] --> B{"Design settled?"}
+    B -- No --> K1["Keep with owner<br/>(exploration)"]
+    B -- Yes --> C{"Needs access the<br/>delegate lacks?"}
+    C -- Yes --> K2["Keep with owner"]
+    C -- No --> D{"Urgent incident?"}
+    D -- Yes --> K3["Keep with owner<br/>or on-call"]
+    D -- No --> E{"Implementation larger<br/>than spec + review cost?"}
+    E -- No --> K4["Keep with owner<br/>(small fix)"]
+    E -- Yes --> F{"Fits one session /<br/>one-hour review?"}
+    F -- No --> S["Split into<br/>several tasks"]
+    S --> F
+    F -- Yes --> G["Delegate via<br/>TASK-NNN.md"]
+
+    classDef decision fill:#FEF5E7,stroke:#E67E22,color:#000,stroke-width:2px
+    classDef keep fill:#D6EAF8,stroke:#2E86C1,color:#000,stroke-width:2px
+    classDef delegate fill:#D5F5E3,stroke:#239B56,color:#000,stroke-width:2px
+    classDef neutral fill:#F2F3F4,stroke:#566573,color:#000
+    class B,C,D,E,F decision
+    class K1,K2,K3,K4 keep
+    class G delegate
+    class A,S neutral

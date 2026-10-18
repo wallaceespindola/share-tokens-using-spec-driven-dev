@@ -1,0 +1,38 @@
+@startuml delegation-swimlanes
+' Copilot capacity sharing: four roles, one task spec, same quality gates
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam swimlaneTitleFontSize 17
+skinparam swimlaneTitleFontStyle bold
+skinparam ActivityBackgroundColor #F1F3F5
+skinparam ActivityBorderColor #495057
+skinparam ActivityDiamondBackgroundColor #FFF3E0
+skinparam ActivityDiamondBorderColor #E8590C
+skinparam ArrowColor #343A40
+
+|#E7F5FF|Business|
+start
+:Requirements and
+acceptance criteria;
+|#D3F9D8|Owner|
+repeat
+  :Write TASK-NNN.md
+  //(no AI credits spent)//;
+|#FFF3E0|Reviewer|
+repeat while (Definition of ready?) is (not ready) not (approved)
+|#F3E5F5|Delegate|
+repeat
+  :Implement with Copilot
+  code + tests + notes
+  //(delegate's own credits)//;
+  |Owner|
+  :Validate: tests,
+  screens, behavior;
+repeat while (Needs another pass?) is (yes: update the spec) not (accepted)
+:Commit and open PR;
+:Same CI/CD, review
+and quality gates;
+stop
+@enduml

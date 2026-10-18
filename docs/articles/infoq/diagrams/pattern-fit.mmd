@@ -1,0 +1,17 @@
+flowchart TD
+    Q1{"Is AI capacity unevenly<br/>spread across the team?"}
+    Q1 -- "no" --> N1["Each developer specs<br/>and implements their own work"]
+    Q1 -- "yes" --> Q2{"Is the design settled<br/>enough to write down?"}
+    Q2 -- "no" --> N2["Keep with the owner:<br/>explore first, spec later"]
+    Q2 -- "yes" --> Q3{"Is implementation large<br/>relative to spec + validation?"}
+    Q3 -- "no" --> N3["Do it by hand:<br/>handoff overhead dominates"]
+    Q3 -- "yes" --> Q4{"Does policy allow the<br/>delegate's tools on this code?"}
+    Q4 -- "no" --> N4["Do not delegate"]
+    Q4 -- "yes" --> Y["Delegate through<br/>a versioned task spec"]
+
+    classDef q fill:#FFF8E1,stroke:#F9A825,color:#000,stroke-width:2px
+    classDef no fill:#ECEFF1,stroke:#546E7A,color:#000,stroke-width:2px
+    classDef yes fill:#E8F5E9,stroke:#2E7D32,color:#000,stroke-width:2px
+    class Q1,Q2,Q3,Q4 q
+    class N1,N2,N3,N4 no
+    class Y yes

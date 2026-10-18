@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="740" viewBox="0 0 1600 740" font-family="Arial, Helvetica, sans-serif">
+<!-- Illustrative only, not measured data: per-user Copilot limits in one billing period -->
+<rect width="1600" height="740" fill="#ffffff"/>
+<text x="300" y="60" font-size="34" font-weight="bold" fill="#0d1b3e">Each developer works against a personal limit per billing period</text>
+<text x="270" y="151.0" font-size="32" text-anchor="end" fill="#1a2744">Dev A</text>
+<rect x="300" y="110" width="900" height="60" rx="10" fill="#d9f5f2" stroke="#2a9d8f" stroke-width="3"/>
+<rect x="300" y="110" width="900.0" height="60" rx="10" fill="#3a5bbf"/>
+<text x="1230" y="151.0" font-size="30" font-weight="bold" fill="#c4472b">hit the limit early</text>
+<text x="270" y="245.0" font-size="32" text-anchor="end" fill="#1a2744">Dev B</text>
+<rect x="300" y="204" width="900" height="60" rx="10" fill="#d9f5f2" stroke="#2a9d8f" stroke-width="3"/>
+<rect x="300" y="204" width="900.0" height="60" rx="10" fill="#3a5bbf"/>
+<text x="1230" y="245.0" font-size="30" font-weight="bold" fill="#c4472b">hit the limit early</text>
+<text x="270" y="339.0" font-size="32" text-anchor="end" fill="#1a2744">Dev C</text>
+<rect x="300" y="298" width="900" height="60" rx="10" fill="#d9f5f2" stroke="#2a9d8f" stroke-width="3"/>
+<rect x="300" y="298" width="315.0" height="60" rx="10" fill="#3a5bbf"/>
+<text x="1230" y="339.0" font-size="30" font-weight="bold" fill="#2a9d8f">credits left over</text>
+<text x="270" y="433.0" font-size="32" text-anchor="end" fill="#1a2744">Dev D</text>
+<rect x="300" y="392" width="900" height="60" rx="10" fill="#d9f5f2" stroke="#2a9d8f" stroke-width="3"/>
+<rect x="300" y="392" width="180.0" height="60" rx="10" fill="#3a5bbf"/>
+<text x="1230" y="433.0" font-size="30" font-weight="bold" fill="#2a9d8f">credits left over</text>
+<text x="270" y="527.0" font-size="32" text-anchor="end" fill="#1a2744">Dev E</text>
+<rect x="300" y="486" width="900" height="60" rx="10" fill="#d9f5f2" stroke="#2a9d8f" stroke-width="3"/>
+<rect x="300" y="486" width="495.00000000000006" height="60" rx="10" fill="#3a5bbf"/>
+<text x="1230" y="527.0" font-size="30" font-weight="bold" fill="#2a9d8f">credits left over</text>
+<text x="270" y="621.0" font-size="32" text-anchor="end" fill="#1a2744">Dev F</text>
+<rect x="300" y="580" width="900" height="60" rx="10" fill="#ffffff" stroke="#9aa5b4" stroke-width="3" stroke-dasharray="12 8"/>
+<text x="1230" y="621.0" font-size="30" font-weight="bold" fill="#6b7a90">no license</text>
+<rect x="300" y="684" width="40" height="28" rx="6" fill="#3a5bbf"/>
+<text x="355" y="708" font-size="26" fill="#1a2744">used</text>
+<rect x="600" y="684" width="40" height="28" rx="6" fill="#d9f5f2" stroke="#2a9d8f" stroke-width="3"/>
+<text x="655" y="708" font-size="26" fill="#1a2744">left over</text>
+<rect x="900" y="684" width="40" height="28" rx="6" fill="#ffffff" stroke="#9aa5b4" stroke-width="3"/>
+<text x="955" y="708" font-size="26" fill="#1a2744">no license</text>
+<text x="1450" y="708" font-size="24" font-style="italic" text-anchor="end" fill="#6b7a90">Illustrative, not measured data</text>
+</svg>

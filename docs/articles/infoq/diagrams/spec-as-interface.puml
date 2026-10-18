@@ -1,0 +1,41 @@
+@startuml spec-as-interface
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam ArrowColor #37474F
+skinparam rectangle {
+  RoundCorner 12
+  BorderColor #37474F
+}
+skinparam file {
+  BackgroundColor #FFF8E1
+  BorderColor #F9A825
+}
+left to right direction
+title The task spec as the interface between roles
+
+rectangle "Specify and validate\n(no AI capacity required)" as human #E3F2FD {
+  rectangle "Business\nrequirements, acceptance" as biz #FFFFFF
+  rectangle "Owner\nwrites spec, validates, opens PR" as owner #FFFFFF
+  rectangle "Reviewer\ndefinition-of-ready gate" as rev #FFFFFF
+}
+
+file "docs/backlog/TASK-NNN.md\nobjective · behavior · acceptance\nout of scope · references\nimplementation notes" as spec
+
+rectangle "Implement\n(spends AI capacity)" as impl #E8F5E9 {
+  rectangle "Delegate\nruns the session, checks tests" as del #FFFFFF
+  rectangle "Coding agent\ncontext: spec + repo instructions" as agent #FFFFFF
+}
+
+rectangle "Shared gates\nCI build, tests, scans, human review" as gates #F3E5F5
+
+biz --> owner : criteria
+owner --> spec : writes
+rev --> spec : approves
+spec --> del : handoff
+del --> agent : prompt file
+agent --> del : code, tests
+del --> spec : notes
+owner --> gates : PR
+@enduml

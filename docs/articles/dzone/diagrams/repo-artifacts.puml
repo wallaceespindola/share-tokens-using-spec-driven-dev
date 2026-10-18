@@ -1,0 +1,53 @@
+@startuml repo-artifacts
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 13
+skinparam componentStyle rectangle
+skinparam ArrowColor #34495E
+skinparam package {
+  BorderColor #2C3E50
+}
+
+package "Repository" {
+  package "/docs  (durable knowledge)" #EAF2F8 {
+    [ARCHITECTURE.md] as arch #D6EAF8
+    [CODING_GUIDE.md] as coding #D6EAF8
+    [TESTING_GUIDE.md] as testing #D6EAF8
+    package "/docs/specs" #FFFFFF {
+      [report-generation/design.md] as design #D6EAF8
+    }
+    package "/docs/backlog  (the contract)" #FFFFFF {
+      [TASK-042-order-summary-report.md] as task #FAD7A0
+    }
+  }
+  package ".github  (how the AI behaves)" #EAFAF1 {
+    [copilot-instructions.md] as instr #D5F5E3
+    [instructions/*.instructions.md] as pinstr #D5F5E3
+    [prompts/implement-task.prompt.md] as prompt #D5F5E3
+    [workflows/ci.yml] as ci #FADBD8
+  }
+  [src/ + tests/] as src #F2F3F4
+}
+
+[GitHub issue\nlabel: ai-delegation] as issue #E8DAEF
+
+task --> arch : references
+task --> testing : references
+task --> design : references
+instr --> arch : links
+instr --> coding : links
+prompt --> task : reads
+issue --> task : links
+src <-- prompt : produces changes in
+ci --> src : gates
+
+legend bottom right
+  |= Color |= Meaning |
+  | <#D6EAF8> | Standing documentation |
+  | <#FAD7A0> | Task spec (per unit of work) |
+  | <#D5F5E3> | Copilot configuration |
+  | <#FADBD8> | Quality gate |
+  | <#E8DAEF> | Tracking |
+endlegend
+@enduml

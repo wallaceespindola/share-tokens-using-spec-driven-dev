@@ -1,0 +1,19 @@
+%% Who spends Copilot credits in a delegated task
+flowchart LR
+    S["Owner writes<br/>TASK-NNN.md"] --> R{"Reviewer:<br/>ready?"}
+    R -- "not yet" --> S
+    R -- "approved" --> I["Delegate implements<br/>with Copilot"]
+    I --> V["Owner validates<br/>tests and screens"]
+    V -- "gap found:<br/>update the spec" --> I
+    V -- "looks right" --> P["Owner commits<br/>and opens PR"]
+
+    subgraph Legend[" "]
+        direction LR
+        L1["Blue: no Copilot credits"]:::free ~~~ L2["Orange: delegate's credits"]:::paid
+    end
+
+    classDef free fill:#e7f5ff,stroke:#1971c2,color:#000,stroke-width:2px
+    classDef paid fill:#fff3e0,stroke:#e8590c,color:#000,stroke-width:2px
+    class S,R,V,P free
+    class I paid
+    style Legend fill:#ffffff,stroke:#cccccc

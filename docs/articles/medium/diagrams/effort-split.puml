@@ -1,0 +1,44 @@
+@startuml effort-split
+!pragma layout smetana
+skinparam backgroundColor #ffffff
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 14
+skinparam ActivityBorderColor #1971c2
+skinparam ActivityBackgroundColor #e7f5ff
+skinparam ArrowColor #495057
+skinparam PartitionBorderColor #868e96
+skinparam NoteBackgroundColor #fff9db
+skinparam NoteBorderColor #f08c00
+title Where the effort goes when the spec is the unit of work
+
+|#d3f9d8|Owner (human, no credits)|
+start
+:Turn requirements into TASK-NNN.md
+objective, steps, acceptance criteria,
+out of scope, references;
+|#fff3bf|Reviewer (human, no credits)|
+:Check definition of ready
+and team standards;
+|#e7f5ff|Delegate + Copilot (credits spent here)|
+repeat
+  :Plan with Copilot;
+  :Implement code, tests, docs;
+  :Run full test suite
+  fill in implementation notes;
+  |#d3f9d8|Owner (human, no credits)|
+  :Validate against acceptance criteria
+  tests, screens, edge cases;
+repeat while (Gap found?) is (yes: fix or update spec)
+->no;
+:Commit, open PR;
+|#f1f3f5|CI/CD (automated)|
+:Build, tests, scans, quality gates;
+stop
+
+legend right
+  Green: owner judgment (specify, verify)
+  Yellow: reviewer gate before credits are spent
+  Blue: the only lane that consumes AI credits
+  Gray: unchanged pipeline
+endlegend
+@enduml

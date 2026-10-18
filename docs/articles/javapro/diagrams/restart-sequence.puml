@@ -1,0 +1,55 @@
+@startuml restart-sequence
+skinparam backgroundColor #ffffff
+skinparam dpi 150
+skinparam defaultFontName Helvetica
+skinparam shadowing false
+skinparam sequence {
+  ParticipantBackgroundColor #d4e8f0
+  ParticipantBorderColor #37474f
+  LifeLineBorderColor #90a4ae
+  ArrowColor #37474f
+  GroupBackgroundColor #f5f5f5
+}
+title Restart after failure: two runs for the same configuration and period
+
+participant "Scheduler or\noperator" as trigger
+participant "OrderSummaryReportJob" as job
+participant "ReportRunRepository" as runs
+participant "Generator +\nDeliveryRepository" as work
+database "report_run" as table
+
+== Run 1 ==
+trigger -> job : run(config 7, 2026-09)
+job -> runs : findCompleted(7, 2026-09)
+runs -> table : SELECT ... status = 'COMPLETED'
+table --> runs : no row
+job -> runs : start(7, 2026-09)
+runs -> table : INSERT STARTED (own transaction)
+group TransactionTemplate
+  job -> work : load config, eligible orders,\ngenerate, save delivery
+  work --> job : DataAccessException
+  note right : delivery insert and any\npartial work roll back
+end
+job -> runs : fail(runId1, message)
+runs -> table : UPDATE FAILED, finished_at, error
+job --> trigger : Failed(runId1)
+
+== Run 2 (restart) ==
+trigger -> job : run(config 7, 2026-09)
+job -> runs : findCompleted(7, 2026-09)
+table --> runs : no row (run 1 is FAILED)
+job -> runs : start(7, 2026-09)
+runs -> table : INSERT STARTED
+group TransactionTemplate
+  job -> work : generate and save delivery
+  job -> runs : complete(runId2)
+  runs -> table : UPDATE COMPLETED
+end
+job --> trigger : Completed(runId2)
+
+== Run 3 (accidental re-run) ==
+trigger -> job : run(config 7, 2026-09)
+job -> runs : findCompleted(7, 2026-09)
+table --> runs : runId2
+job --> trigger : Skipped(runId2)
+@enduml

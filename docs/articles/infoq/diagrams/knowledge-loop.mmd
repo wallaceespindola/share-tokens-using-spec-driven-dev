@@ -1,0 +1,18 @@
+flowchart LR
+    A["Approved task spec<br/>(versioned in repo)"] --> B["Delegate session<br/>agent implements"]
+    B --> C["Implementation notes<br/>changed · decisions · open questions"]
+    C --> D{"Owner validation<br/>tests, screens, review"}
+    D -- "gap found" --> E["Owner edits the spec,<br/>not the chat"]
+    E --> B
+    D -- "accepted" --> F["PR through CI<br/>and normal review"]
+    F --> G["Reusable decisions<br/>promoted to /docs"]
+    G -. "richer context for<br/>the next spec" .-> A
+
+    classDef spec fill:#FFF8E1,stroke:#F9A825,color:#000,stroke-width:2px
+    classDef ai fill:#E8F5E9,stroke:#2E7D32,color:#000,stroke-width:2px
+    classDef human fill:#E3F2FD,stroke:#1565C0,color:#000,stroke-width:2px
+    classDef gate fill:#F3E5F5,stroke:#6A1B9A,color:#000,stroke-width:2px
+    class A,E,G spec
+    class B,C ai
+    class D human
+    class F gate

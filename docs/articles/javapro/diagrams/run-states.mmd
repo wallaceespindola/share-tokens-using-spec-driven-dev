@@ -1,0 +1,12 @@
+stateDiagram-v2
+    direction LR
+    [*] --> STARTED: start(config, period)<br/>own transaction
+    STARTED --> COMPLETED: report + delivery saved<br/>same transaction as complete()
+    STARTED --> FAILED: exception caught<br/>fail(runId, error)
+    FAILED --> [*]: next trigger inserts<br/>a new STARTED row
+    COMPLETED --> [*]: later triggers return Skipped
+    note right of STARTED
+        A crash leaves the row STARTED.
+        It is not COMPLETED, so the
+        next run retries from the start.
+    end note

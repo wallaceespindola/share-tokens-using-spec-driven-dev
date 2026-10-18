@@ -1,0 +1,34 @@
+%% Delegation flow in three stages. Links between stages are drawn subgraph-to-subgraph
+%% so each stage keeps its left-to-right layout.
+%% Colors: teal = Owner, amber = Reviewer, blue = Delegate, grey = Business / CI/CD
+%%{init: {"themeVariables": {"fontSize": "20px", "fontFamily": "Arial"}}}%%
+flowchart TB
+    subgraph prepare["1 - Prepare: no credits spent"]
+        direction LR
+        A[Business writes<br/>requirements] --> B["Owner writes<br/>TASK-NNN.md<br/>+ opens issue"]
+        B --> C{Reviewer:<br/>ready?}
+        C -- "No: rework" --> B
+    end
+    subgraph build["2 - Implement: delegate's Copilot credits"]
+        direction LR
+        D[Fresh Copilot session<br/>with the task file] --> D2[Plan, then implement<br/>code + tests + docs] --> E[All tests pass<br/>notes filled in]
+    end
+    subgraph deliver["3 - Validate and deliver: owner"]
+        direction LR
+        F[Owner validates<br/>tests + screens] --> H[Owner commits<br/>and opens PR] --> I[CI/CD gates<br/>then merge]
+    end
+    prepare -- "Yes: approved" --> build
+    build -- handback --> deliver
+    deliver -. "issue found: owner updates the task" .-> build
+
+    classDef owner fill:#d9f5f2,stroke:#2a9d8f,color:#0d1b3e,stroke-width:2px
+    classDef review fill:#fff3d6,stroke:#e09f3e,color:#0d1b3e,stroke-width:2px
+    classDef delegate fill:#dfe7fb,stroke:#3a5bbf,color:#0d1b3e,stroke-width:2px
+    classDef neutral fill:#f1f3f6,stroke:#6b7a90,color:#0d1b3e,stroke-width:2px
+    class B,F,H owner
+    class C review
+    class D,D2,E delegate
+    class A,I neutral
+    style prepare fill:#ffffff,stroke:#c5cdd8
+    style build fill:#ffffff,stroke:#c5cdd8
+    style deliver fill:#ffffff,stroke:#c5cdd8

@@ -1,0 +1,88 @@
+@startuml job-components
+set separator none
+skinparam backgroundColor #ffffff
+skinparam dpi 150
+skinparam defaultFontName Helvetica
+skinparam classFontSize 13
+skinparam shadowing false
+skinparam class {
+  BackgroundColor<<Job>> #fde2c4
+  BackgroundColor<<Service>> #d4e8f0
+  BackgroundColor<<Repository>> #e6dcf2
+  BackgroundColor<<Record>> #e3f4e1
+  BackgroundColor<<Table>> #eceff1
+  BorderColor #37474f
+  ArrowColor #37474f
+}
+skinparam package {
+  BackgroundColor #fafafa
+  BorderColor #90a4ae
+}
+title TASK-042: order summary report job (illustrative, no Spring Batch)
+
+package "com.example.reports.service" {
+  class OrderSummaryReportJob <<Job>> {
+    + run(configurationId: long, period: ReportPeriod): RunOutcome
+  }
+  class OrderSummaryReportGenerator <<Service>> {
+    + generate(config, period, orders): OrderSummaryReport
+  }
+  interface RunOutcome <<Record>> {
+    sealed: Skipped | Completed | Failed
+  }
+}
+
+package "com.example.reports.repository" {
+  class ReportConfigurationRepository <<Repository>> {
+    + findById(id): Optional<ReportConfiguration>
+  }
+  class OrderRepository <<Repository>> {
+    + findEligible(config, period): List<EligibleOrder>
+  }
+  class ReportRunRepository <<Repository>> {
+    + findCompleted(configId, period): Optional<UUID>
+    + start(configId, period): UUID
+    + complete(runId): void
+    + fail(runId, error): void
+  }
+  class ReportDeliveryRepository <<Repository>> {
+    + save(runId, report): void
+  }
+}
+
+package "com.example.reports.domain" {
+  class ReportConfiguration <<Record>>
+  class ReportPeriod <<Record>>
+  class EligibleOrder <<Record>>
+  class OrderSummaryReport <<Record>>
+}
+
+package "PostgreSQL" <<Database>> {
+  class report_configuration <<Table>>
+  class orders <<Table>>
+  class report_run <<Table>>
+  class report_delivery <<Table>>
+}
+
+OrderSummaryReportJob --> ReportRunRepository : 1. check / record run
+OrderSummaryReportJob --> ReportConfigurationRepository : 2. load config
+OrderSummaryReportJob --> OrderRepository : 3. eligible orders
+OrderSummaryReportJob --> OrderSummaryReportGenerator : 4. generate
+OrderSummaryReportJob --> ReportDeliveryRepository : 5. store metadata
+OrderSummaryReportJob ..> RunOutcome : returns
+
+ReportConfigurationRepository --> report_configuration
+OrderRepository --> orders : read only
+ReportRunRepository --> report_run
+ReportDeliveryRepository --> report_delivery
+
+OrderSummaryReportGenerator ..> OrderSummaryReport : creates
+
+legend right
+  Orange: job orchestration
+  Blue: pure domain service
+  Purple: JdbcClient repositories
+  Green: records / sealed types
+  Grey: PostgreSQL tables
+end legend
+@enduml

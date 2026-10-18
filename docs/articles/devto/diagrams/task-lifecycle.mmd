@@ -1,0 +1,16 @@
+stateDiagram-v2
+    direction LR
+    [*] --> Draft: Owner copies template
+    Draft --> Approved: Reviewer checks definition of ready
+    Approved --> Draft: Not ready, sent back
+    Approved --> InProgress: Delegate picks it up
+    InProgress --> InValidation: Tests pass, implementation notes filled in
+    InValidation --> InProgress: Owner updates task, asks for another iteration
+    InValidation --> Done: Owner commits, opens PR, CI/CD green
+    Done --> [*]
+
+    InProgress: In progress (Delegate, Copilot credits spent here)
+    InValidation: In validation (Owner, no credits)
+    Draft: Draft (Owner, no credits)
+    Approved: Approved (Reviewer, no credits)
+    Done: Done (merged)

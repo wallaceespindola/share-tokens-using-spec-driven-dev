@@ -1,0 +1,58 @@
+@startuml iteration-loop
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 13
+skinparam activity {
+  BackgroundColor #EAF2F8
+  BorderColor #2C3E50
+  DiamondBackgroundColor #FEF5E7
+  DiamondBorderColor #E67E22
+}
+skinparam ArrowColor #34495E
+
+|#F4F6F7|Owner|
+start
+:Write TASK-NNN.md from template;
+:Open ai-delegation issue;
+|#F5EEF8|Reviewer|
+repeat
+  :Check definition of ready\nand standards;
+  if (Ready?) then (no)
+    |Owner|
+    :Clarify spec\n(no credits spent);
+    |Reviewer|
+  else (yes)
+  endif
+repeat while (Approved?) is (no) not (yes)
+|#EAFAF1|Delegate|
+repeat
+  :Fresh Copilot session\nwith task + docs;
+  :Plan, then implement\ncode, tests, docs;
+  :Full test suite green;
+  :Fill implementation notes;
+  |Owner|
+  :Validate result;
+  if (Small fix?) then (yes)
+    :Fix it directly;
+  endif
+repeat while (Gap needs another\niteration?) is (yes:\nupdate task file) not (no)
+:Final commit, open PR;
+|#FDEDEC|CI/CD|
+:Build, tests, security scans,\nquality gates;
+if (All green?) then (yes)
+  :Merge;
+  |Owner|
+  :Promote reusable notes\ninto /docs;
+  stop
+else (no)
+  |Owner|
+  :Fix or send back;
+  stop
+endif
+
+legend bottom
+  Swimlane color = role. Orange diamonds = decision points.
+  Loop 1 (review) costs no AI credits. Loop 2 (implementation) does.
+endlegend
+@enduml

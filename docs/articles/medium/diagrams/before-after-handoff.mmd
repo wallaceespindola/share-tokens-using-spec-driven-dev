@@ -1,0 +1,27 @@
+%% Before vs after: chat request vs task-spec handoff
+flowchart LR
+    subgraph BEFORE["Before: the chat request"]
+        direction TB
+        A1["Owner pastes a request<br/>in team chat"] --> A2["Delegate asks Copilot<br/>with partial context"]
+        A2 --> A3["Clarifying questions<br/>spend delegate's credits"]
+        A3 --> A2
+        A2 --> A4["Code pasted back<br/>into chat"]
+        A4 --> A5["Context lost when<br/>the session closes"]
+    end
+    subgraph AFTER["After: the task spec"]
+        direction TB
+        B1["Owner writes<br/>TASK-NNN.md"] --> B2{"Reviewer:<br/>ready?"}
+        B2 -- "No" --> B1
+        B2 -- "Yes" --> B3["Delegate implements<br/>with Copilot + tests"]
+        B3 --> B4["Owner validates<br/>against criteria"]
+        B4 -- "Gap found" --> B1
+        B4 -- "OK" --> B5["Owner commits,<br/>opens PR, CI runs"]
+    end
+    BEFORE ~~~ AFTER
+
+    classDef bad fill:#ffe3e3,stroke:#c92a2a,color:#000,stroke-width:2px
+    classDef good fill:#d3f9d8,stroke:#2f9e44,color:#000,stroke-width:2px
+    classDef gate fill:#fff3bf,stroke:#f08c00,color:#000,stroke-width:2px
+    class A1,A2,A3,A4,A5 bad
+    class B1,B3,B4,B5 good
+    class B2 gate

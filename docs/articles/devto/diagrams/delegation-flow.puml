@@ -1,0 +1,50 @@
+@startuml delegation-flow
+skinparam backgroundColor #ffffff
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 13
+skinparam ActivityBackgroundColor #e7f5ff
+skinparam ActivityBorderColor #1971c2
+skinparam ActivityDiamondBackgroundColor #fff3e0
+skinparam ActivityDiamondBorderColor #e8590c
+skinparam SwimlaneBorderColor #868e96
+skinparam ArrowColor #343a40
+title Delegating a task through the repository (no tokens, no shared accounts)
+
+|Business|
+start
+:Write requirements and
+acceptance criteria in /docs/specs;
+|Owner|
+repeat :Write docs/backlog/TASK-NNN.md\nfrom the template;
+  :Open GitHub issue
+labeled ai-delegation;
+|Reviewer|
+  :Check against definition of ready
+and team standards;
+repeat while (Not ready?) is (send back) not (approved)
+|Owner|
+:Pick a delegate with capacity
+on the board, record name in task;
+|Delegate|
+repeat :New Copilot session:\n/implement-task with the task file;
+  :Plan first, then implement
+code + tests + docs;
+  :Full JUnit suite passes;
+  :Fill in "Implementation notes";
+|Owner|
+  :Validate: JUnit, functional tests,
+affected screens;
+  if (Small issue?) then (yes)
+    :Owner fixes it directly;
+  endif
+repeat while (Bigger issue?) is (update task, iterate) not (validated)
+:Commit validated work
+and open the pull request;
+|CI/CD|
+:Build, tests, security scans,
+quality gates;
+:Merge;
+|Team|
+:Move reusable notes into /docs;
+stop
+@enduml
