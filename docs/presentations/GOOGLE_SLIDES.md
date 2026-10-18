@@ -1,25 +1,46 @@
-# Getting This Deck into Google Slides
+# Getting this deck into Google Slides
 
-Two ways to bring `share-copilot-capacity.pptx` into Google Slides.
+The deck is `share-copilot-capacity.pptx` (21 slides, 16:9, with speaker notes).
 
-## Option 1: Import into an existing presentation
+## Step 0: Get the file
 
-1. Open [Google Slides](https://slides.google.com) and create a blank presentation (or open one you have)
-2. Go to **File → Import slides**
-3. Click the **Upload** tab and select `docs/presentations/share-copilot-capacity.pptx`
-4. Select **All** slides, then click **Import slides**
+- From a clone: `docs/presentations/share-copilot-capacity.pptx`.
+- From GitHub without cloning: open [the file on GitHub](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/blob/main/docs/presentations/share-copilot-capacity.pptx) and click **Download raw file**.
 
-## Option 2: Open the PPTX directly from Drive
+## Option 1: Open it as a new Google Slides presentation
 
-1. Upload `share-copilot-capacity.pptx` to [Google Drive](https://drive.google.com)
-2. Right-click the file → **Open with → Google Slides**
-3. Optionally: **File → Save as Google Slides** to convert it to a native Slides file
+1. Go to [Google Slides](https://slides.google.com).
+2. Click **Blank presentation**, then **File > Open** (or press Ctrl+O / Cmd+O).
+3. Choose the **Upload** tab and drop `share-copilot-capacity.pptx` in.
+4. When it opens, use **File > Save as Google Slides** so you edit a native copy, not the PPTX.
 
-Fonts note: the deck uses only Arial for text and Courier New for code, so it converts cleanly. Speaker notes come along with the import (**View → Show speaker notes**). Diagrams are PNG images, so they look the same everywhere. After import, check the table slides (7 and 16), since row heights can shift slightly.
+## Option 2: Add the slides to a deck you already have
+
+1. Open your existing presentation in Google Slides.
+2. Go to **File > Import slides**.
+3. Choose the **Upload** tab and select `share-copilot-capacity.pptx`.
+4. Pick **All** (or only the slides you want). Leave **Keep original theme** checked so the dark title slides and colors stay as designed.
+5. Click **Import slides**. They're added after the slide you have selected.
+
+## Option 3: Through Google Drive
+
+1. Upload `share-copilot-capacity.pptx` to [Google Drive](https://drive.google.com) (**New > File upload**).
+2. Right-click the file and choose **Open with > Google Slides**.
+3. Use **File > Save as Google Slides** to convert it.
+
+To have every PPTX convert automatically on upload, turn on **Drive settings > Convert uploads to Google Docs editor format**.
+
+## After importing
+
+- Speaker notes come along: **View > Show speaker notes**.
+- The deck uses only Arial and Courier New, so fonts don't get substituted.
+- Diagrams are PNG images, so they look the same as in PowerPoint.
+- Check the table slides (7 and 16) once; row heights can shift slightly.
+- To present: **Slideshow** (top right), or **Presenter view** from its dropdown to see your notes.
 
 ## Speaker Deck
 
-Upload `share-copilot-capacity.pdf` to [Speaker Deck](https://speakerdeck.com). It is exported from the Marp deck (`slides.md`) and has the same 21 slides.
+Speaker Deck takes PDF only. Sign in at [speakerdeck.com](https://speakerdeck.com), click **New Deck**, upload `share-copilot-capacity.pdf`, add a title and description, then publish. The PDF is exported from the Marp deck (`slides.md`) and has the same 21 slides.
 
 ## Marp alternative (HTML / PDF)
 

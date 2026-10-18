@@ -74,6 +74,12 @@ The full process, including what to delegate, the definition of ready, credit-sa
 
 To reuse it in your own project, copy `docs/spec/`, the task template and the `.github/` files.
 
+## Slides
+
+A 21-slide talk on this process is in `docs/presentations/`: `share-copilot-capacity.pptx` for PowerPoint and Google Slides, `share-copilot-capacity.pdf` for Speaker Deck, and the Marp source `slides.md`.
+
+To use it in Google Slides: open [slides.google.com](https://slides.google.com), create a blank presentation, then **File > Open > Upload** and pick the `.pptx` (or **File > Import slides** to add it to a deck you already have). Then **File > Save as Google Slides**. Full steps, including Speaker Deck, are in [GOOGLE_SLIDES.md](docs/presentations/GOOGLE_SLIDES.md).
+
 ## Development
 
 The project is documentation only. Diagrams are PlantUML (`.puml`) and Mermaid (`.mmd`) sources with rendered PNGs next to them.
