@@ -1,5 +1,14 @@
 # Sharing Copilot token credits in a team
 
+![Share the credits](docs/images/banner.png)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Docs](https://img.shields.io/badge/Written_in-Markdown-000000?logo=markdown)](docs/spec/PRD-copilot-capacity-sharing.md)
+[![Diagrams](https://img.shields.io/badge/Diagrams-PlantUML_%7C_Mermaid-ff3670?logo=mermaid&logoColor=white)](docs/specs/report-generation/design.md)
+[![GitHub Copilot](https://img.shields.io/badge/Built_for-GitHub_Copilot-8957e5?logo=githubcopilot&logoColor=white)](https://docs.github.com/en/copilot)
+[![Spec Kit](https://img.shields.io/badge/Spec--driven-Spec_Kit-2ea44f?logo=github)](https://github.com/github/spec-kit)
+[![docs CI](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/actions/workflows/docs.yml/badge.svg)](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev/actions/workflows/docs.yml)
+
 The idea: a team's Copilot token credits should work as a shared pool, even though each bundle is licensed to one person. When one developer runs out and a teammate still has credits left, the work moves to the credits, not the credits to the person.
 
 This is done with spec-driven development. The developer who is out of credits (or has no license) writes a Markdown task spec. A teammate with credits left implements it with Copilot. The developer who wrote the spec validates the result and opens the pull request. Nobody shares a login or transfers credits.
