@@ -1,6 +1,6 @@
 ---
 title: "Share Copilot capacity, not accounts: a TASK.md workflow"
-published: false
+published: true
 description: "Developers without Copilot credits hand implementation to teammates with spare capacity, using TASK.md specs, a shared prompt file and a definition of ready."
 tags: githubcopilot, ai, productivity, git
 ---
@@ -9,6 +9,8 @@ tags: githubcopilot, ai, productivity, git
 
 Most teams get Copilot through a company contract with GitHub or Microsoft, and each developer works against a personal limit per billing period: a per-user credit allowance, or a per-user budget that admins set on top of the organization's pool. Usage is uneven. One developer has a small limit and runs out early in the period. Another ends the period with credits left over. A third has no license at all.
 
+![Illustrative bar chart of per-developer Copilot credit use in one billing period: two developers hit the limit early, three have credits left over, and one has no license](diagrams/credit-usage.png)
+
 A limit belongs to one user, so the leftover credits do nothing for the colleague who ran out. That's capacity the company already paid for, sitting idle. If you route work to the people who still have credits, you get more out of the same contract without buying extra seats. (If your org pools credits with no per-user caps, the credit argument is weaker, but the teammate with no license still needs a way in.)
 
 The informal fix is a chat message: "can you run this through Copilot for me?" It sort of works, once. The context is half in your head, the delegate spends credits on clarifying questions, and everything Copilot learned disappears with the conversation.
@@ -16,6 +18,8 @@ The informal fix is a chat message: "can you run this through Copilot for me?" I
 So I wrote down a process for doing it properly. The owner of the work writes a Markdown task spec, commits it to the repo, and a teammate with spare Copilot capacity implements it. Nobody transfers tokens or shares a login, and the repo carries the context.
 
 The full proposal and example files are here: [share-tokens-using-spec-driven-dev on GitHub](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev). This article covers the hands-on part: the files you add to a repo and how a task moves through them.
+
+![The delegation loop in three stages: the owner writes the task spec and a reviewer checks it against the definition of ready, the delegate implements with Copilot while the owner validates and updates the spec on issues, then the owner opens the PR through the same CI/CD and quality gates](diagrams/process-flow.png)
 
 ## This is spec-driven development, with a team around it
 
@@ -326,3 +330,4 @@ Wallace Espindola, Solution Architect
 
 - GitHub: <https://github.com/wallaceespindola/>
 - LinkedIn: <https://www.linkedin.com/in/wallaceespindola/>
+- Speaker Deck: <https://speakerdeck.com/wallacese>

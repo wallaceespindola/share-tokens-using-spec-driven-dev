@@ -1,0 +1,20 @@
+flowchart TD
+    subgraph S1 [1. Specify: no credits spent]
+        direction LR
+        A[Business requirements] --> B[Owner writes task spec]
+        B --> C{Reviewer:<br/>definition of ready?}
+        C -- No --> B
+    end
+    subgraph S2 [2. Implement and validate]
+        direction LR
+        D[Delegate implements with Copilot<br/>code + tests] --> F[Owner validates]
+        F --> G{Issue?}
+        G -- Yes --> H[Owner updates spec]
+        H --> D
+    end
+    subgraph S3 [3. Ship]
+        direction LR
+        I[Owner opens PR] --> K[Same CI/CD and quality gates] --> L[Merge]
+    end
+    S1 -- "Yes: ready" --> S2
+    S2 -- "No issue" --> S3

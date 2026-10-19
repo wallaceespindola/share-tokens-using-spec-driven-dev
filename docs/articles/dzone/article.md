@@ -12,6 +12,8 @@
 
 AI coding capacity rarely lands evenly across a team. Copilot usually arrives through a company contract where each developer works against a personal limit per billing period: a per-user credit allowance, or a per-user budget that admins set on top of the organization's pool. Some developers burn through theirs in the first week. Others end the period with credits left over, and some have no license at all. Each limit belongs to one person, so the leftover credits do nothing for the colleague who ran out. That is capacity the company has already paid for, sitting idle next to people who could use it.
 
+![Illustrative bar chart of per-developer Copilot credit use in one billing period: two developers hit the limit early, three have credits left over, and one has no license](diagrams/credit-usage.png)
+
 The usual workaround is a favor in a chat window: "Can you run this through Copilot for me?" It works once. As a habit it breaks down quickly. The request carries half the context, the colleague spends their own allowance asking clarifying questions, nobody reviews what was asked for, and whatever was decided lives in a Copilot conversation that nobody else will ever read.
 
 I wanted something sturdier, so I wrote it down as a process and put it in a [companion repository](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev): a PRD for the process itself, a task template, an example task (`TASK-042`), and the architecture, coding and testing guides the task points to. This article is about the governance side of that proposal: who is responsible for what, where the quality gates sit, how accountability is kept, and how you would tell whether it is working. It describes a proposed process. I don't have adoption numbers from a live rollout, and I won't invent any.
@@ -21,6 +23,8 @@ I wanted something sturdier, so I wrote it down as a process and put it in a [co
 A developer who owns a piece of work but lacks AI capacity (the **owner**) writes a task specification as a Markdown file in the repository. A **reviewer** checks it against a definition of ready. A colleague with spare Copilot capacity (the **delegate**) implements it with Copilot, runs the tests and writes implementation notes back into the same file. The owner validates the result, makes the final commit and opens the pull request, which goes through the same CI/CD pipeline as everything else.
 
 One rule underpins all of it: **nobody transfers tokens, credits, licenses or accounts**. The delegate uses their own seat for work assigned to them through the normal tracker, and the only thing that moves between people is a specification.
+
+![The delegation loop in three stages: the owner writes the task spec and a reviewer checks it against the definition of ready, the delegate implements with Copilot while the owner validates and updates the spec on issues, then the owner opens the PR through the same CI/CD and quality gates](diagrams/process-flow.png)
 
 ### Where spec-driven development and Spec Kit fit
 
@@ -346,9 +350,12 @@ Wallace Espindola, Solution Architect
 
 - GitHub: <https://github.com/wallaceespindola/>
 - LinkedIn: <https://www.linkedin.com/in/wallaceespindola/>
+- Speaker Deck: <https://speakerdeck.com/wallacese>
 
 <!--
 DZone submission metadata
+TL;DR: Share uneven Copilot capacity through reviewed task specs: the owner specifies and validates, a teammate with credits implements. No shared accounts.
+Article type: Analysis
 Summary (meta description): A process model for delegating AI coding work through task specs when Copilot capacity is uneven: roles, readiness gates, accountability, metrics.
 Primary zone: AI. Additional zones: DevOps, Agile, Software Design and Architecture.
 Tags: spec-driven-development, github-copilot, ai-assisted-development, software-process, devops

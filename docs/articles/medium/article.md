@@ -24,11 +24,15 @@ Those leftover credits are capacity the company has already paid for. I don't th
 
 I wrote this up as a process proposal in [share-tokens-using-spec-driven-dev](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev), with a PRD, a task template and a worked example. This article is about why I think it works, and what it changes about the job.
 
+![The delegation loop in three stages: the owner writes the task spec and a reviewer checks it against the definition of ready, the delegate implements with Copilot while the owner validates and updates the spec on issues, then the owner opens the PR through the same CI/CD and quality gates](diagrams/process-flow.png)
+
 ## The AI gap inside one team
 
 We talk a lot about AI access at the level of companies and countries. We talk much less about the gap inside a single team, probably because it is awkward. Nobody wants to say in standup that they are slower because their colleague has a better tool budget.
 
 The gap is real, though, and it comes from how Copilot is usually bought. A company signs a contract with Microsoft or GitHub, and each licensed user works against a personal limit per billing period, either a per-user credit allowance or a per-user budget that admins set on the organization's pool. People use that capacity very differently. A developer who leans on agent mode for a few days of heavy refactoring can empty theirs early. A colleague who mostly uses inline suggestions, or who spent the sprint in meetings and design reviews, ends the period with credits to spare. Because each limit belongs to one user, the spare credits can't help the person who ran out. And some developers on the same team have no license at all.
+
+![Illustrative bar chart of per-developer Copilot credit use in one billing period: two developers hit the limit early, three have credits left over, and one has no license](diagrams/credit-usage.png)
 
 From the company's side, that is paid capacity going unused next to people doing work by hand. Routing work to whoever still has credits gets more out of the same contract without buying anything extra.
 
@@ -185,4 +189,4 @@ Happy coding!
 
 Wallace Espindola, Solution Architect
 
-[GitHub](https://github.com/wallaceespindola/) · [LinkedIn](https://www.linkedin.com/in/wallaceespindola/)
+[GitHub](https://github.com/wallaceespindola/) · [LinkedIn](https://www.linkedin.com/in/wallaceespindola/) · [Speaker Deck](https://speakerdeck.com/wallacese)

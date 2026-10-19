@@ -12,6 +12,8 @@ description: How engineering leaders can spread limited GitHub Copilot capacity 
 
 Most teams get GitHub Copilot through a company contract with Microsoft or GitHub, and each licensed developer works against a personal limit per billing period: a per-user credit allowance, or a per-user budget that admins set on the organization's pool. Usage is rarely even. Some developers hit their limit early. Others reach the end of the period with credits left over. And some colleagues have no license at all, so they write everything by hand while the person next to them has capacity sitting idle.
 
+![Illustrative bar chart of per-developer Copilot credit use in one billing period: two developers hit the limit early, three have credits left over, and one has no license](diagrams/credit-usage.png)
+
 Those leftover credits are capacity the company has already paid for. As a tech lead or manager you can't ask for more seats every quarter, but you can route work to the people who still have credits. So I wrote down a process for doing that, without anyone sharing an account or bending the license terms. The proposal, a task template and a filled-in example live here: [share-tokens-using-spec-driven-dev on GitHub](https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev).
 
 ## The problem leaders see
@@ -36,14 +38,14 @@ That file is a version-controlled task spec, `docs/backlog/TASK-NNN-short-slug.m
 
 This is spec-driven development applied at team level: the spec is written first, and the spec is what moves from owner to delegate. If you want tooling for it, [GitHub Spec Kit](https://github.com/github/spec-kit) is an optional, free and open-source toolkit that works with Copilot. After a one-time project constitution, it takes each feature through specify, plan, tasks, implement and converge.
 
+![The delegation loop in three stages: the owner writes the task spec and a reviewer checks it against the definition of ready, the delegate implements with Copilot while the owner validates and updates the spec on issues, then the owner opens the PR through the same CI/CD and quality gates](diagrams/process-flow.png)
+
 ## Four roles, one loop
 
-| Role | Who | Responsible for |
-|------|-----|-----------------|
-| Business | Product owner or analyst | Requirements and acceptance criteria |
-| Owner | Developer with no license or a small allowance | Writing the task, validating the result, final commit and PR |
-| Reviewer | Architect, tech lead or senior developer | Approving the task before any credits are spent |
-| Delegate | Developer with Copilot and enough credits | Implementing with Copilot, including tests and docs |
+- **Business** (product owner or analyst): requirements and acceptance criteria.
+- **Owner** (developer with no license or a small allowance): writing the task, validating the result, final commit and PR.
+- **Reviewer** (architect, tech lead or senior developer): approving the task before any credits are spent.
+- **Delegate** (developer with Copilot and enough credits): implementing with Copilot, including tests and docs.
 
 ![Swimlane diagram of the four roles: Business writes requirements, Owner writes the task spec, Reviewer checks it against the definition of ready, Delegate implements with Copilot, Owner validates, commits and opens the PR through the normal CI/CD gates](diagrams/delegation-swimlanes.png)
 
@@ -111,5 +113,6 @@ Wallace Espindola, Solution Architect
 
 GitHub: <https://github.com/wallaceespindola/>
 LinkedIn: <https://www.linkedin.com/in/wallaceespindola/>
+Speaker Deck: <https://speakerdeck.com/wallacese>
 
 **#githubcopilot #engineeringleadership #softwareengineering #ai #techleadership #specdrivendevelopment**

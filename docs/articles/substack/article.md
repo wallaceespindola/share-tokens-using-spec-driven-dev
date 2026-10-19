@@ -25,6 +25,8 @@ Everyone has the same backlog. Only some of them have the tool. And the credits 
 
 I wrote up a small proposal for this in a repo. This issue is the coffee-length version: the problem, the one habit that fixes most of it, and what to try on Monday.
 
+![The delegation loop in three stages: the owner writes the task spec and a reviewer checks it against the definition of ready, the delegate implements with Copilot while the owner validates and updates the spec on issues, then the owner opens the PR through the same CI/CD and quality gates](diagrams/process-flow.png)
+
 ## Credits are personal, the backlog isn't
 
 GitHub's docs describe Copilot usage in organizations as measured in [AI credits](https://docs.github.com/en/copilot/concepts/billing-and-usage/organizations-and-enterprises), where each license adds credits to a shared pool and budget controls can be set per user, per cost center or per enterprise. That makes sense for billing. It also means that, inside one team, AI capacity behaves like something each person owns, while the work behaves like something the team owns. (If your org pools credits with no per-user caps, the credit side of this gets weaker. The colleague with no license is still stuck.)
@@ -131,4 +133,5 @@ Wallace Espindola, Solution Architect
 
 GitHub: <https://github.com/wallaceespindola/>
 LinkedIn: <https://www.linkedin.com/in/wallaceespindola/>
+Speaker Deck: <https://speakerdeck.com/wallacese>
 Email: <wallace.espindola@gmail.com>
