@@ -38,6 +38,10 @@ To have every PPTX convert automatically on upload, turn on **Drive settings > C
 - Check the table slides (7 and 16) once; row heights can shift slightly.
 - To present: **Slideshow** (top right), or **Presenter view** from its dropdown to see your notes.
 
+## Keynote
+
+Open `share-copilot-capacity.pptx` in Keynote (**File > Open**). The slides and speaker notes come through; Keynote may substitute fonts it doesn't have, so check the two table slides (7 and 16).
+
 ## Speaker Deck
 
 Speaker Deck takes PDF only. Sign in at [speakerdeck.com](https://speakerdeck.com), click **New Deck**, upload `share-copilot-capacity.pdf`, add a title and description, then publish. The PDF is exported from the Marp deck (`slides.md`) and has the same 21 slides.
