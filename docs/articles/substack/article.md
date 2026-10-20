@@ -21,6 +21,8 @@ Hey folks,
 
 Some team economics first. Most teams get Copilot through a company contract, and each developer works against a personal limit per billing period: a per-user credit allowance, or a per-user budget that admins set on the organization's pool. Then real life happens. One developer has a small limit and burns through it early in the period. Another sits on a seat with plenty left over, because this sprint they're mostly in meetings and code reviews. A third has no license at all.
 
+![Illustrative bar chart of per-developer Copilot credit use in one billing period: two developers hit the limit early, three have credits left over, and one has no license](diagrams/credit-usage.png)
+
 Everyone has the same backlog. Only some of them have the tool. And the credits left on the quiet seat can't help the colleague who ran out, because each limit belongs to one person.
 
 I wrote up a small proposal for this in a repo. This issue is the coffee-length version: the problem, the one habit that fixes most of it, and what to try on Monday.
