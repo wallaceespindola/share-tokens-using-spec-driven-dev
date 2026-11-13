@@ -114,5 +114,6 @@ Wallace Espindola, Solution Architect
 GitHub: <https://github.com/wallaceespindola/>
 LinkedIn: <https://www.linkedin.com/in/wallaceespindola/>
 Speaker Deck: <https://speakerdeck.com/wallacese>
+Email: <wallace.espindola@gmail.com>
 
 **#githubcopilot #engineeringleadership #softwareengineering #ai #techleadership #specdrivendevelopment**
