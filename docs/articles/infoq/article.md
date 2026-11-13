@@ -220,6 +220,4 @@ Contact: [wallace.espindola@gmail.com](mailto:wallace.espindola@gmail.com) · [L
 
 ---
 
-**AI disclosure**: This article was drafted with AI assistance (Claude) for research support, outlining, drafting and editing, based on the author's own process definition and repository. Quotes and product details were checked against the cited sources.
-
 **Publishing note**: This article is submitted for InfoQ's 4-week exclusive publishing window. It will not be cross-posted to other platforms until that window closes.

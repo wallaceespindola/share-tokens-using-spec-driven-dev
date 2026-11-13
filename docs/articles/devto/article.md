@@ -318,8 +318,6 @@ Clone [the repo](https://github.com/wallaceespindola/share-tokens-using-spec-dri
 
 How does your team handle uneven Copilot capacity today? Chat messages, pairing, or something more structured? I'd like to hear in the comments.
 
-*I wrote this article with AI assistance, then reviewed, fact-checked and edited it myself.*
-
 **Examples repository:** every example in this article (the PRD, the TASK-042 task spec, the team guides, the Copilot instructions, the prompt file and the diagrams) is in <https://github.com/wallaceespindola/share-tokens-using-spec-driven-dev>.
 
 Need more tech insights?

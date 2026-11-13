@@ -5,8 +5,6 @@
 **By Wallace Espindola, Solution Architect**
 <wallace.espindola@gmail.com> | [LinkedIn](https://www.linkedin.com/in/wallaceespindola/) | [GitHub](https://github.com/wallaceespindola/)
 
-*I wrote this article with AI assistance, then reviewed, fact-checked and edited it myself.*
-
 ---
 
 ## Abstract
